@@ -1,151 +1,747 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Zihao Zhu</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    a {
-    color: #1772d0;
-    text-decoration:none;
+    /* Color scheme adapted from Jon Barron / Sergey Karayev */
+    * {
+      box-sizing: border-box;
     }
-    li{
-    margin: 5px 0;
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #222222;
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    a {
+      color: #1772d0;
+      text-decoration: none;
     }
     a:focus, a:hover {
-    color: #f09228;
-    text-decoration:none;
+      color: #f09228;
+      text-decoration: none;
     }
-    body,td,th,tr,p,a {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 14px
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 16px 24px 36px 24px;
     }
-    strong {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 14px;
+    .header-table {
+      width: 100%;
+      border: 0;
+      border-spacing: 0;
+      margin: 0 auto;
     }
-    heading {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 22px;
+    .header-bio {
+      padding: 16px 28px 16px 0;
+      vertical-align: middle;
     }
-    papertitle {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 700
+    .header-photo {
+      width: 215px;
+      padding: 16px 0;
+      vertical-align: middle;
+      text-align: center;
     }
-    name {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 32px;
+    .header-photo img {
+      width: 190px;
+      max-width: 100%;
+      border-radius: 30%;
+      display: block;
+      margin: 0 auto;
     }
-    .one
-    {
-    width: 200px;
-    height: 200px;
-    position: relative;
+    .name {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 4px 0;
     }
-    .one_tall
-    {
-    width: 200px;
-    height: 220px;
-    position: relative;
+    .email {
+      color: #555555;
+      margin: 0 0 14px 0;
     }
-    .one_short
-    {
-    width: 200px;
-    height: 180px;
-    position: relative;
+    .profile-links {
+      text-align: center;
+      margin-top: 16px;
     }
-    .two
-    {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
+    h2.section-heading {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 28px 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eeeeee;
     }
-    .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
+    .section-note {
+      font-size: 13px;
+      color: #666666;
+      margin: -4px 0 18px 0;
     }
-    span.highlight {
-        background-color: #ffffd0;
+    ul.news-list {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+    ul.news-list li {
+      margin: 7px 0;
+    }
+    .media-note {
+      color: #555555;
+    }
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .pub-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 10px 8px;
+      border-radius: 6px;
+      transition: background-color 0.15s ease-in-out;
+    }
+    .pub-row:hover {
+      background-color: #fafafa;
+    }
+    .pub-media {
+      flex: 0 0 270px;
+      width: 270px;
+    }
+    .pub-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 270px;
+      min-height: 140px;
+      max-height: 215px;
+      padding: 6px;
+      background-color: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .pub-media a:hover {
+      border-color: #c8d9ee;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+    .pub-media img {
+      max-width: 100%;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .pub-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .papertitle {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .pub-authors {
+      margin: 3px 0 2px 0;
+      color: #333333;
+      line-height: 1.45;
+    }
+    .pub-venue {
+      margin: 2px 0 4px 0;
+      color: #444444;
+    }
+    .award {
+      color: #c0392b;
+      font-weight: 700;
+    }
+    .pub-links {
+      margin: 3px 0 8px 0;
+      font-size: 13.5px;
+    }
+    .pub-links .sep {
+      color: #999999;
+      margin: 0 4px;
+    }
+    .pub-desc {
+      margin: 0;
+      color: #3a3a3a;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 36px;
+      padding-top: 12px;
+      border-top: 1px solid #eeeeee;
+      text-align: right;
+      font-size: 12px;
+      color: #777777;
+    }
+    @media (max-width: 720px) {
+      .header-table, .header-table tbody, .header-table tr, .header-table td {
+        display: block;
+        width: 100%;
+      }
+      .header-bio {
+        padding: 12px 0;
+      }
+      .header-photo {
+        width: 100%;
+        padding: 8px 0 16px 0;
+      }
+      .pub-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .pub-media, .pub-media a {
+        width: 100%;
+        flex: none;
+        max-height: 250px;
+      }
+      .pub-media img {
+        max-height: 235px;
+      }
     }
   </style>
-  <title>Alex Zihao Zhu</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-    <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+</head>
+<body>
+  <div class="container">
+    <table class="header-table">
       <tr>
-        <td width="100%" valign="middle">
-        <p align="center">
-          <name>Alex Zihao Zhu</name><br>
-            alexzzhu(at)gmail(dot)com</p>
-		<p>I am a Staff Research Scientist at <a href="https://www.waymo.com/research">Waymo</a>.
-	   I completed my PhD in Computer Science at the <a href="http://www.seas.upenn.edu">University of Pennsylvania</a> 
-		 with my advisor, <a href="http://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a>.
-     Before that, I did my undergraduate studies at <a href="https://www.duke.edu">Duke University</a>.
-    <br><br>
-     I am a member of the perception foundation model team at Waymo, developing and scaling large foundation models for autonomous driving.
-		 Within the team, I lead the effort to integrate VLMs into our perception foundation models, with the goal of unlocking reasoning and 
-     generalization capabilities. More generally I am also interested in model and data scaling, multi-task training and multi-modal sensing.
-		<br><br>
-     I am also the TL for the learned segmentation system running on all Waymo cars, where we develop novel methods to perform extremely high 
-     performance segmentation in real time on all of our vehicles.
-    </p>
-        <p align=center>
-          <a href="files/Resume.pdf">Resume</a> &nbsp/&nbsp
-	  <a href="https://scholar.google.com/citations?user=JEtzfiEAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-          <a href="https://github.com/alexzzhu">GitHub</a>
-        </p>
+        <td class="header-bio">
+          <div style="text-align: center;">
+            <h1 class="name">Alex Zihao Zhu</h1>
+            <p class="email">alexzzhu(at)gmail(dot)com</p>
+          </div>
+          <p>
+            I am a Research Scientist on the <a href="https://deepmind.google/models/gemini-robotics/">Gemini Robotics</a> team at <a href="https://deepmind.google/">Google DeepMind</a>, where I work on generalist vision-language-action (VLA) foundation models and physical AI for robots.
+            Recently, I contributed to <a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Gemini Robotics 2</a> and <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/">Gemini Robotics 2.5</a>.
+          </p>
+          <p>
+            Previously, I was a Research Scientist at <a href="https://www.waymo.com/research">Waymo</a>, where I worked on the perception foundation model team—leading efforts to integrate VLMs into perception models alongside model and data scaling, multi-task training, and multi-modal sensing—and served as the Tech Lead for Waymo's onboard learned segmentation system.
+          </p>
+          <p>
+            I completed my PhD in Computer Science at the <a href="https://www.seas.upenn.edu">University of Pennsylvania</a>
+            with my advisor, <a href="https://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a>.
+            Before that, I did my undergraduate studies at <a href="https://www.duke.edu">Duke University</a>, where I worked with <a href="https://www.michaelmzavlanos.org/">Michael Zavlanos</a>.
+          </p>
+          <p class="profile-links">
+            <a href="files/Resume.pdf">Resume</a> &nbsp;/&nbsp;
+            <a href="https://scholar.google.com/citations?user=JEtzfiEAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;/&nbsp;
+            <a href="https://github.com/alexzzhu">GitHub</a>
+          </p>
         </td>
-        <td width="33%">
-        <img src="files/main_photo.jpg" alt="main_photo.jpg" style="width:180px;max-width:40vw;border-radius:30%">
+        <td class="header-photo">
+          <img src="files/main_photo.jpg" alt="Alex Zihao Zhu">
         </td>
       </tr>
-      </table>
+    </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>News</heading> 
-        <ul>
-	  <li><span>Rest of website coming soon!</span></li>
-        </ul>
-            </td>
-          </tr>
-        </tbody></table>
+    <h2 class="section-heading">News</h2>
+    <ul class="news-list">
+      <li>
+        <strong>Nov 2026:</strong> Released <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/">Gemini Robotics 2.5</a> (<a href="https://deepmind.google/models/gemini-robotics/vla/">model overview</a>).
+        <span class="media-note">Media: <a href="https://www.robotics247.com/article/google-deepmind-introduces-gemini-robotics-2.5-ai-model-to-improve-robot-dexterity-and-reliability">Robotics 24/7</a>, <a href="https://the-decoder.com/google-deepminds-gemini-robotics-2-5-scores-96-percent-sorting-metal-parts-in-a-mercedes-benz-assembly-pilot/">The Decoder</a>.</span>
+      </li>
+      <li>
+        <strong>Nov 2026:</strong> Released our preprint on <a href="https://arxiv.org/abs/2611.26842">3D Open-Vocabulary Detection via Visual Alignment and Generative Captions</a>.
+      </li>
+      <li>
+        <strong>Jul 2026:</strong> Released <a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Gemini Robotics 2</a> and <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">Gemini Robotics ER 2</a>.
+        <span class="media-note">Media: <a href="https://www.cnet.com/videos/google-deepmind-shows-off-gemini-robotics-2-doing-chores-and-the-future-is-here/">CNET</a>, <a href="https://www.deeplearning.ai/the-batch/googles-robotics-model-has-legs">DeepLearning.AI (The Batch)</a>, <a href="https://siliconangle.com/2026/07/30/google-deepmind-debuts-gemini-robotics-2-model-series-humanoid-robots/">SiliconANGLE</a>.</span>
+      </li>
+      <li>
+        <strong>May 2026:</strong> Released <a href="https://arxiv.org/abs/2605.20390">STELLAR: Scaling 3D Perception Large Models for Autonomous Driving</a>.
+      </li>
+    </ul>
 
-    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Publications</heading>
-        </td>
-      </tr>
-      </table>
-        
- 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding=smplx>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      </table>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07PZSWBDPB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <h2 class="section-heading">Publications</h2>
+    <p class="section-note">* denotes equal contribution. For patents and citation counts, see <a href="https://scholar.google.com/citations?user=JEtzfiEAAAAJ&amp;hl=en">Google Scholar</a>.</p>
 
-  gtag('config', 'G-07PZSWBDPB');
-</script>
-    </td>
-    </tr>
-  </table>
-  </body>
+    <div class="pub-list">
+
+      <!-- 2026: 3D Open-Vocabulary Detection -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2611.26842">
+            <img src="files/papers/2026_ov3d.jpg" alt="3D Open-Vocabulary Detection via Visual Alignment and Generative Captions" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2611.26842">3D Open-Vocabulary Detection via Visual Alignment and Generative Captions</a>
+          <div class="pub-authors">
+            Thomas E. Huang, <strong>Alex Zihao Zhu</strong>, Hao Xiang, Tianyi Cai, Jingwei Ji, Yuliang Zou, Jiafan Yu, Xin Huang, Mingxing Tan
+          </div>
+          <div class="pub-venue"><em>arXiv preprint arXiv:2611.26842</em>, 2026</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2611.26842">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2611.26842.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Introduces a two-part framework for outdoor 3D open-vocabulary object detection combining class-agnostic 3D proposal distillation from spatially-aware 2D VLMs with generative MLLM captions for fine-grained semantic enrichment. Achieves state-of-the-art 3D open-vocabulary detection on both the Waymo Open Dataset and nuScenes without manual category labels.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2026: STELLAR -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2605.20390">
+            <img src="files/papers/2026_stellar.jpg" alt="STELLAR: Scaling 3D Perception Large Models for Autonomous Driving" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2605.20390">STELLAR: Scaling 3D Perception Large Models for Autonomous Driving</a>
+          <div class="pub-authors">
+            Yingwei Li*, Xin Huang*, Yang Liu*, Yang Fu, <strong>Alex Zihao Zhu</strong>, Chen Song, Junwen Yao, Anant Subramanian, Hao Xiang, Weijing Shi, Yuliang Zou, Tom Hoddes, Zhaoqi Leng, Govind Thattai, Dragomir Anguelov, Mingxing Tan
+          </div>
+          <div class="pub-venue"><em>arXiv preprint arXiv:2605.20390</em>, 2026</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.20390">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2605.20390.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Presents a systematic scaling study for multi-modal 3D autonomous driving perception using a Sparse Window Transformer that fuses LiDAR, radar, multi-view camera, and surfel map priors in BEV space. Trained up to 500M parameters on 50M driving examples (&gt;10 ZettaFLOPs), establishing empirical scaling laws and a new state of the art on the Waymo Open Dataset by a large margin.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2025: World-Simulation -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://openreview.net/forum?id=dgb4rfPzaw">
+            <img src="files/papers/2025_worldsim.png" alt="World-Simulation as Pre-Training for Scalable Perception" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://openreview.net/forum?id=dgb4rfPzaw">World-Simulation as Pre-Training for Scalable Perception</a>
+          <div class="pub-authors">
+            Hao Xiang, Zhaoqi Leng, <strong>Alex Zihao Zhu</strong>, Kan Chen, Mengtian Li, Xia Chen, Yingwei Li, Tong He, Yanhui Liang, Junwen Yao, Yan Xu, Anant Subramanian, Cheolho Park, Runsheng Xu, Dragomir Anguelov, Mingxing Tan
+          </div>
+          <div class="pub-venue"><em>Preprint (OpenReview)</em>, 2025</div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=dgb4rfPzaw">paper</a>
+          </div>
+          <p class="pub-desc">
+            Introduces PerceptionLM, an autoregressive next-token world simulator pre-trained jointly over video, depth, and semantic tokens and adapted to dense and sparse perception tasks via a continuous-discrete decoder adaptor. Demonstrates consistent compute and temporal-context scaling gains on depth estimation and semantic segmentation across nuScenes, nuImages, and the Waymo Open Dataset.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2024: 3D Open-Vocabulary Panoptic Segmentation -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2401.02402">
+            <img src="files/papers/2024_ov3d_panoptic.jpg" alt="3D Open-Vocabulary Panoptic Segmentation with 2D-3D Vision-Language Distillation" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2401.02402">3D Open-Vocabulary Panoptic Segmentation with 2D-3D Vision-Language Distillation</a>
+          <div class="pub-authors">
+            Zihao Xiao, Longlong Jing, Shangxuan Wu, <strong>Alex Zihao Zhu</strong>, Jingwei Ji, Chiyu Max Jiang, Wei-Chih Hung, Thomas Funkhouser, Weicheng Kuo, Anelia Angelova, Yin Zhou, Shiwei Sheng
+          </div>
+          <div class="pub-venue"><em>European Conference on Computer Vision (ECCV)</em>, 2024</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2401.02402">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2401.02402.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Proposes the first framework for 3D open-vocabulary panoptic segmentation in autonomous driving, fusing learnable LiDAR features with frozen 2D CLIP features alongside novel object-level and voxel-level distillation losses. Substantially outperforms strong 2D-to-3D baselines on both unseen <em>things</em> and <em>stuff</em> categories on nuScenes and SemanticKITTI.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2023: Superpixel Transformers -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2309.16889">
+            <img src="files/papers/2023_superpixel.jpg" alt="Superpixel Transformers for Efficient Semantic Segmentation" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2309.16889">Superpixel Transformers for Efficient Semantic Segmentation</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>*, Jieru Mei*, Siyuan Qiao, Hang Yan, Yukun Zhu, Liang-Chieh Chen, Henrik Kretzschmar
+          </div>
+          <div class="pub-venue"><em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2023</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2309.16889">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2309.16889.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Revives superpixels inside a differentiable transformer architecture by decomposing dense pixels into learned superpixels via local cross-attention, applying global self-attention directly in superpixel space, and unfolding predictions back to pixels. Matches state-of-the-art segmentation accuracy on Cityscapes and ADE20K while significantly reducing parameters and inference latency.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2022: Instance Segmentation with Cross-Modal Consistency -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2210.08113">
+            <img src="files/papers/2022_crossmodal.jpg" alt="Instance Segmentation with Cross-Modal Consistency" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2210.08113">Instance Segmentation with Cross-Modal Consistency</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Vincent Casser, Reza Mahjourian, Henrik Kretzschmar, Sören Pirk
+          </div>
+          <div class="pub-venue"><em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2022</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2210.08113">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2210.08113.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Introduces a cross-modal and temporal contrastive loss that learns viewpoint-invariant, temporally stable per-pixel and per-point instance embeddings jointly across camera images and 3D LiDAR point clouds, with optical-flow pseudo-labeling for partially labeled videos. Improves instance segmentation quality by up to +1.9 mAP on Cityscapes and +1.7 mAP on KITTI-360 while improving temporal embedding stability.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2022: Waymo Open Dataset: PVPS -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2206.07704">
+            <img src="files/papers/2022_wod_pvps.jpg" alt="Waymo Open Dataset: Panoramic Video Panoptic Segmentation" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2206.07704">Waymo Open Dataset: Panoramic Video Panoptic Segmentation</a>
+          <div class="pub-authors">
+            Jieru Mei, <strong>Alex Zihao Zhu</strong>, Xinchen Yan, Hang Yan, Siyuan Qiao, Yukun Zhu, Liang-Chieh Chen, Henrik Kretzschmar, Dragomir Anguelov
+          </div>
+          <div class="pub-venue"><em>European Conference on Computer Vision (ECCV)</em>, 2022</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2206.07704">arXiv</a><span class="sep">/</span><a href="https://waymo.com/open/">dataset</a><span class="sep">/</span><a href="https://github.com/waymo-research/waymo-open-dataset">code</a>
+          </div>
+          <p class="pub-desc">
+            Introduces the Waymo Open Dataset Panoramic Video Panoptic Segmentation (WOD: PVPS) benchmark, providing 100k labeled camera images across 2,860 multi-camera sequences and 28 semantic classes with consistent instance IDs across both time and all five vehicle cameras—an order of magnitude larger than prior VPS datasets—along with the weighted STQ (wSTQ) metric and strong ViP-DeepLab baselines.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2021: EventGAN -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1912.01584">
+            <img src="files/papers/2021_eventgan.jpg" alt="EventGAN: Leveraging Large Scale Image Datasets for Event Cameras" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1912.01584">EventGAN: Leveraging Large Scale Image Datasets for Event Cameras</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Ziyun Wang, Kaung Khant, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE International Conference on Computational Photography (ICCP)</em>, 2021</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1912.01584">arXiv</a><span class="sep">/</span><a href="https://github.com/alexzzhu/EventGAN">code</a>
+          </div>
+          <p class="pub-desc">
+            Proposes a fast, GPU-parallelizable neural simulator that converts pairs of standard grayscale images directly into realistic event volumes using adversarial training and cycle-consistency losses via pre-trained optical flow and image reconstruction networks. Downstream object detection and 2D human pose networks trained purely on EventGAN-simulated KITTI, MPII, and Human3.6M data generalize effectively to real event benchmarks (MVSEC and DHP19).
+          </p>
+        </div>
+      </div>
+
+      <!-- 2020: Spike-FlowNet -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/2003.06696">
+            <img src="files/papers/2020_spikeflownet.jpg" alt="Spike-FlowNet: Event-based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/2003.06696">Spike-FlowNet: Event-based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks</a>
+          <div class="pub-authors">
+            Chankyu Lee, Adarsh Kumar Kosta, <strong>Alex Zihao Zhu</strong>, Kenneth Chaney, Kostas Daniilidis, Kaushik Roy
+          </div>
+          <div class="pub-venue"><em>European Conference on Computer Vision (ECCV)</em>, 2020</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2003.06696">arXiv</a><span class="sep">/</span><a href="https://github.com/chan8972/Spike-FlowNet">code</a><span class="sep">/</span><a href="https://youtu.be/8t9xe0LLjL4">video</a>
+          </div>
+          <p class="pub-desc">
+            Presents a deep hybrid Spiking–Analog Neural Network architecture that pairs a spiking encoder for sparse spatiotemporal event inputs with analog residual and decoder layers to avoid deep-SNN spike vanishing. Trained end-to-end with self-supervised learning on MVSEC, Spike-FlowNet outperforms its ANN-only counterpart (EV-FlowNet) in optical flow accuracy (AEE) while delivering substantial computational energy savings.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2019: Learning Event-Based Height from Plane and Parallax -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://openaccess.thecvf.com/content_CVPRW_2019/papers/EventVision/Chaney_Learning_Event-Based_Height_From_Plane_and_Parallax_CVPRW_2019_paper.pdf">
+            <img src="files/papers/2019_plane_parallax.jpg" alt="Learning Event-Based Height from Plane and Parallax" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://openaccess.thecvf.com/content_CVPRW_2019/papers/EventVision/Chaney_Learning_Event-Based_Height_From_Plane_and_Parallax_CVPRW_2019_paper.pdf">Learning Event-Based Height from Plane and Parallax</a>
+          <div class="pub-authors">
+            Kenneth Chaney, <strong>Alex Zihao Zhu</strong>, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em> &amp; <em>CVPR Workshop on Event-Based Vision</em>, 2019</div>
+          <div class="pub-links">
+            <a href="https://openaccess.thecvf.com/content_CVPRW_2019/papers/EventVision/Chaney_Learning_Event-Based_Height_From_Plane_and_Parallax_CVPRW_2019_paper.pdf">paper</a>
+          </div>
+          <p class="pub-desc">
+            Transfers classical plane-and-parallax geometry to event cameras by warping events onto the ground plane and training a self-supervised network to predict the height-to-depth ratio from residual parallax flow. Runs at 75 Hz on a GPU and outperforms image-based and direct depth baselines for metric height/depth estimation and ground free-space segmentation on high-speed and nighttime MVSEC driving scenes.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2019: Unsupervised Event-based Learning of Optical Flow, Depth, and Egomotion -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1812.08156">
+            <img src="files/papers/2019_unsup_flow.jpg" alt="Unsupervised Event-based Learning of Optical Flow, Depth, and Egomotion" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1812.08156">Unsupervised Event-based Learning of Optical Flow, Depth, and Egomotion</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Liangzhe Yuan, Kenneth Chaney, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2019 &nbsp;(<em>also CVPR 2019 Live Demo</em>)</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1812.08156">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/1812.08156.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Introduces a discretized spatiotemporal event volume representation and a purely event-based unsupervised loss that learns motion directly by minimizing motion blur in motion-compensated event images—eliminating the need for grayscale frames at training time. On MVSEC, reduces outdoor optical flow AEE from 0.49 to 0.32 px over EV-FlowNet and cuts relative pose error in half compared to SfMLearner while outperforming Monodepth in day and night driving depth estimation.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2019: Motion Equivariant Networks -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1902.06820">
+            <img src="files/papers/2019_motion_equiv.jpg" alt="Motion Equivariant Networks for Event Cameras with the Temporal Normalization Transform" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1902.06820">Motion Equivariant Networks for Event Cameras with the Temporal Normalization Transform</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Ziyun Wang, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>arXiv preprint arXiv:1902.06820</em>, 2019</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1902.06820">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/1902.06820.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Proposes the Temporal Normalization Transform (TNT), which normalizes spatial event coordinates by timestamp around a regressed landmark so constant optical flow becomes a pure translation in 3D spatiotemporal space, yielding motion-equivariant CNNs without heavy data augmentation. Evaluated on N-MNIST and a new 30-direction N-MOVING-MNIST benchmark, achieving significantly stronger generalization to unseen test motions.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: Robustness Meets Deep Learning -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1812.08351">
+            <img src="files/papers/2018_robust_ego.jpg" alt="Robustness Meets Deep Learning: An End-to-End Hybrid Pipeline for Unsupervised Learning of Egomotion" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1812.08351">Robustness Meets Deep Learning: An End-to-End Hybrid Pipeline for Unsupervised Learning of Egomotion</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>*, Wenxin Liu*, Ziyun Wang, Vijay Kumar, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>arXiv preprint arXiv:1812.08351</em>, 2018</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1812.08351">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/1812.08351.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Combines unsupervised deep optical flow and monocular disparity networks with a differentiable 3-point RANSAC geometric pose solver that automatically filters out independently moving objects and feeds refined pose-consistency photometric losses back to the networks. Achieves state-of-the-art unsupervised egomotion accuracy on KITTI with a compact network, maintaining robustness in dynamic traffic scenes.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: ECCVW Unsupervised Event-based Optical Flow -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://doi.org/10.1007/978-3-030-11024-6_54">
+            <img src="files/papers/2018_eccvw_flow.jpg" alt="Unsupervised Event-based Optical Flow using Motion Compensation" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://doi.org/10.1007/978-3-030-11024-6_54">Unsupervised Event-based Optical Flow using Motion Compensation</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Liangzhe Yuan, Kenneth Chaney, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>European Conference on Computer Vision (ECCV) Workshops</em>, 2018</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-030-11024-6_54">paper</a>
+          </div>
+          <p class="pub-desc">
+            Demonstrates that an event-based optical flow CNN can be trained purely from raw events using a motion-compensation timestamp-image loss that penalizes event motion blur without requiring photometric grayscale supervision. Establishes strong unsupervised optical flow accuracy on MVSEC sequences, laying the foundation for the full CVPR 2019 flow, depth, and egomotion framework.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: Realtime Time Synchronized Event-based Stereo -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1803.09025">
+            <img src="files/papers/2018_stereo.jpg" alt="Realtime Time Synchronized Event-based Stereo" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1803.09025">Realtime Time Synchronized Event-based Stereo</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Yibo Chen, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>European Conference on Computer Vision (ECCV)</em>, 2018</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1803.09025">arXiv</a><span class="sep">/</span><a href="https://youtu.be/4oa7e4hsrYo">video</a>
+          </div>
+          <p class="pub-desc">
+            Uses camera velocity to construct left and right time-synchronized event disparity volumes that sharpen events at the true disparity while blurring incorrect disparities, paired with a lightweight bitwise IoU matching cost that jointly rewards stereo similarity and penalizes blur. Runs in real time at 40 ms on a laptop GPU and outperforms more expensive smoothing-based event stereo methods on MVSEC with markedly reduced foreground fattening.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: EV-FlowNet -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1802.06898">
+            <img src="files/papers/2018_evflownet.jpg" alt="EV-FlowNet: Self-Supervised Optical Flow Estimation for Event-based Cameras" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1802.06898">EV-FlowNet: Self-Supervised Optical Flow Estimation for Event-based Cameras</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Liangzhe Yuan, Kenneth Chaney, Kostas Daniilidis
+          </div>
+          <div class="pub-venue">
+            <em>Robotics: Science and Systems (RSS)</em>, 2018 &mdash;
+            <span class="award">Best Student Paper Award Finalist (3 of 71)</span>
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1802.06898">arXiv</a><span class="sep">/</span><a href="https://github.com/daniilidis-group/EV-FlowNet">code</a><span class="sep">/</span><a href="https://youtu.be/eMHZBSoq0sE">video</a>
+          </div>
+          <p class="pub-desc">
+            Introduces the first self-supervised deep learning pipeline for event-based optical flow, encoding asynchronous event streams into a compact 4-channel count/timestamp image representation and supervising training via photometric consistency on co-captured DAVIS grayscale frames. Also introduces the MVSEC ground-truth optical flow benchmark and demonstrates dense event-only flow predictions competitive with state-of-the-art frame-based networks.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: MVSEC -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1801.10202">
+            <img src="files/papers/2018_mvsec.jpg" alt="The Multi Vehicle Stereo Event Camera Dataset" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1801.10202">The Multi Vehicle Stereo Event Camera Dataset: An Event Camera Dataset for 3D Perception</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Dinesh Thakur, Tolga Özaslan, Bernd Pfrommer, Vijay Kumar, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE Robotics and Automation Letters (RA-L)</em> &amp; <em>ICRA</em>, 2018</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1801.10202">arXiv</a><span class="sep">/</span><a href="https://daniilidis-group.github.io/mvsec/">dataset</a><span class="sep">/</span><a href="https://github.com/daniilidis-group/mvsec">code</a>
+          </div>
+          <p class="pub-desc">
+            Presents MVSEC, the first large-scale synchronized stereo event-camera dataset for 3D perception, collected across handheld, hexacopter, car, and motorcycle platforms under diverse indoor, outdoor, and nighttime lighting conditions. Provides stereo DAVIS events, grayscale frames, IMU measurements, and up to 100 Hz ground-truth poses and LiDAR-derived depth maps, becoming a standard benchmark for event-based vision.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018: Fast Autonomous Flight -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1712.02052">
+            <img src="files/papers/2018_fast_flight.jpg" alt="Fast, Autonomous Flight in GPS-Denied and Cluttered Environments" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1712.02052">Fast, Autonomous Flight in GPS-Denied and Cluttered Environments</a>
+          <div class="pub-authors">
+            Kartik Mohta, Michael Watterson, Yash Mulgaonkar, Sikang Liu, Chao Qu, Anurag Makineni, Kelsey Saulnier, Jeffrey Delmerico, Giuseppe Loianno, Ke Sun, <strong>Alex Zhu</strong>, Konstantinos Karydis, Nikolay Atanasov, Davide Scaramuzza, Kostas Daniilidis, Camillo Jose Taylor, Vijay Kumar
+          </div>
+          <div class="pub-venue"><em>Journal of Field Robotics (JFR)</em>, 35(1):101&ndash;120, 2018</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1712.02052">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/1712.02052.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Details the full hardware, onboard visual-inertial state estimation, 3D mapping, receding-horizon trajectory planning, and control stack of an autonomous quadrotor built for the DARPA Fast Lightweight Autonomy (FLA) program. Demonstrates fast, collision-free flight through cluttered, GPS-denied warehouse environments using exclusively onboard sensing and compute, with ~1% estimator drift over 60+ m trajectories.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2017: Controlling a Robotic Stereo Camera -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://arxiv.org/abs/1706.01966">
+            <img src="files/papers/2017_stereo_ctrl.jpg" alt="Controlling a Robotic Stereo Camera Under Image Quantization Noise" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://arxiv.org/abs/1706.01966">Controlling a Robotic Stereo Camera Under Image Quantization Noise</a>
+          <div class="pub-authors">
+            Charles Freundlich, Yan Zhang, <strong>Alex Zihao Zhu</strong>, Philippos Mordohai, Michael M. Zavlanos
+          </div>
+          <div class="pub-venue"><em>The International Journal of Robotics Research (IJRR)</em>, 36(12):1268&ndash;1285, 2017</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/1706.01966">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/1706.01966.pdf">pdf</a>
+          </div>
+          <p class="pub-desc">
+            Formulates a two-stage Next-Best-View (NBV) active perception controller for mobile stereo cameras that explicitly models pixel quantization noise and Field-of-View constraints while minimizing Kalman Filter target covariance. Also introduces a data-driven empirical pixel-error model to capture calibration uncertainty, validated in both multi-target simulations and real robotic experiments.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2017: Event-Based Visual Inertial Odometry -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Zhu_Event-Based_Visual_Inertial_CVPR_2017_paper.pdf">
+            <img src="files/papers/2017_evio.jpg" alt="Event-Based Visual Inertial Odometry" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Zhu_Event-Based_Visual_Inertial_CVPR_2017_paper.pdf">Event-Based Visual Inertial Odometry</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Nikolay Atanasov, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2017</div>
+          <div class="pub-links">
+            <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Zhu_Event-Based_Visual_Inertial_CVPR_2017_paper.pdf">paper</a><span class="sep">/</span><a href="https://github.com/daniilidis-group/event_feature_tracking">code</a>
+          </div>
+          <p class="pub-desc">
+            Presents EVIO, the first visual-inertial odometry algorithm to fuse purely event-based asynchronous feature tracking with an IMU in a structureless Extended Kalman Filter (MSCKF-style) for full 6-DoF metric pose estimation. Demonstrates accurate long-trajectory tracking on the Event-Camera Dataset and outperforms classical frame-based KLT-VIO under high-speed motions and high-dynamic-range lighting.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2017: Event-Based Feature Tracking with Probabilistic Data Association -->
+      <div class="pub-row">
+        <div class="pub-media">
+          <a href="https://ieeexplore.ieee.org/document/7989531">
+            <img src="files/papers/2017_feature_tracking.jpg" alt="Event-Based Feature Tracking with Probabilistic Data Association" loading="lazy">
+          </a>
+        </div>
+        <div class="pub-content">
+          <a class="papertitle" href="https://ieeexplore.ieee.org/document/7989531">Event-Based Feature Tracking with Probabilistic Data Association</a>
+          <div class="pub-authors">
+            <strong>Alex Zihao Zhu</strong>, Nikolay Atanasov, Kostas Daniilidis
+          </div>
+          <div class="pub-venue"><em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2017</div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/7989531">paper</a><span class="sep">/</span><a href="https://github.com/daniilidis-group/event_feature_tracking">code</a>
+          </div>
+          <p class="pub-desc">
+            Formulates asynchronous event-to-feature assignment as a latent soft probabilistic variable solved jointly with optical flow via Expectation-Maximization, combined with affine template alignment and flow-adaptive feature lifetimes. Delivers longer, more accurate feature tracks than frame-based trackers in egomotion and extreme-speed scenarios such as tracking a semi truck at 60 mph three meters away.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Website template adapted from <a href="https://jonbarron.info/">Jon Barron</a>.
+    </div>
+  </div>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-07PZSWBDPB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-07PZSWBDPB');
+  </script>
+</body>
 </html>
